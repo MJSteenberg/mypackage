@@ -5,7 +5,7 @@ Team 9 Functions
 python setup.py sdist
 
 # installing this package from Github
-pip install https://github.com/MJSteenberg/mypackage
+pip install git+https://github.com/MJSteenberg/mypackage
 
 # upgrading this package from Github
-pip install
+pip install --upgrade+https://github.com/MJSteenberg/mypackage
