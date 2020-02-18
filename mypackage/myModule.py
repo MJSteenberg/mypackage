@@ -2,7 +2,19 @@
 import pandas as pd
 import numpy as np
 
+ebp_url = 'https://raw.githubusercontent.com/Explore-AI/Public-Data/master/Data/electrification_by_province.csv'
+ebp_df = pd.read_csv(ebp_url)
+for col, row in ebp_df.iloc[:,1:].iteritems():
+    ebp_df[col] = ebp_df[col].str.replace(',','').astype(int)
 
+twitter_url = 'https://raw.githubusercontent.com/Explore-AI/Public-Data/master/Data/twitter_nov_2019.csv'
+twitter_df = pd.read_csv(twitter_url)
+
+# gauteng ebp data as a list
+gauteng = ebp_df['Gauteng'].astype(float).to_list()
+
+# dates for twitter tweets
+dates = twitter_df['Date'].to_list()
 
 # dictionary mapping official municipality twitter handles to the municipality name
 
@@ -178,9 +190,8 @@ def word_splitter(df):
 def stop_words_remover(df,stops=stop_words_dict):
     def hash_me(words):
         return [i for i in words.lower().split() if i not in stops["stopwords"]]
-
     df["Without Stop Words"] = df["Tweets"].apply(hash_me)
-    return df   
+    return df
 ### END FUNCTION
 
 
