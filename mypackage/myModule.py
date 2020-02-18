@@ -1,7 +1,5 @@
-#from mypackage.includes import constants
 import pandas as pd
 import numpy as np
-
 ebp_url = 'https://raw.githubusercontent.com/Explore-AI/Public-Data/master/Data/electrification_by_province.csv'
 ebp_df = pd.read_csv(ebp_url)
 
@@ -19,7 +17,6 @@ gauteng = ebp_df['Gauteng'].astype(float).to_list()
 dates = twitter_df['Date'].to_list()
 
 # dictionary mapping official municipality twitter handles to the municipality name
-
 mun_dict = {
     '@CityofCTAlerts' : 'Cape Town',
     '@CityPowerJhb' : 'Johannesburg',
