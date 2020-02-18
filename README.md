@@ -17,3 +17,5 @@ import mypackage.myModule as mm
 # calling the functions
 mm.<functionname>(<parameters>)
 
+# the Dataframes file contains all data used in the predict
+Need to use stopwords dict for Function 6.
