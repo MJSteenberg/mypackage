@@ -59,8 +59,8 @@ def dictionary_of_metrics(items:list):
     
         Description:
         ------------
-        This function calculates the mean, median, variance, standard deviation, minimum and maximum
-        of a given list of numeric items. 
+        This function calculates the metrics which include the mean, median, variance, standard deviation, minimum and maximum
+        of given data of numeric items and outputs the metrics as a dictionary. 
         
         Parameters:
         -----------
