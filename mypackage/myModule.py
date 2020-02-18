@@ -99,7 +99,9 @@ def dictionary_of_metrics(items):
 
 ### START FUNCTION
 def five_num_summary(items):
-        """five_num_summary(items)
+    
+    
+    """five_num_summary(items)
             
             Description:
             ------------
@@ -113,8 +115,7 @@ def five_num_summary(items):
             Return:
             -------
             (dict): It returns a dictionary of the five number summary --> Q1, Q3,median, min , and max.  
-        """
-        
+    """
     sorteditems = sorted(items)
     return {'max': sorteditems[-1],
             'median': round(np.median(items),2) ,
