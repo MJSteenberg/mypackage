@@ -4,7 +4,7 @@ import mypackage.myModule as mm
  print(mm.dictionary_of_metrics([1,2,3,4,5]))
  
  # Function 2 Test
- print(mm.five_num_summary([1,2,3,4,5))
+ print(mm.five_num_summary([1,2,3,4,5]))
  
  # Function 3 Test
  print(mm.date_parser(dates[:3]))
