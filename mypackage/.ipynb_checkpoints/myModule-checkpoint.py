@@ -55,6 +55,17 @@ stop_words_dict = {
 
 ### START FUNCTION
 def dictionary_of_metrics(items:list):
+    """dictionary_of_metrics(items:list)
+    
+        Parameters:
+        -----------
+        (list): list of strings.
+        
+        Return:
+        -------
+        (dict): It returns a dictionary of mean, median, std, var, min , and max.  
+    """
+    
     itemsort = sorted(items)
     return {"mean": round(np.mean(items),2),
             "median": round(np.median(items),2),
