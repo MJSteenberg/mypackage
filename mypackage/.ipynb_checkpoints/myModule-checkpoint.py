@@ -68,7 +68,8 @@ def dictionary_of_metrics(items:list):
         
         Return:
         -------
-        (dict): It returns a dictionary of mean, median, std, var, min , and max.  
+        (dict): the function return a dict with keys 'mean', 'median', 'std', 'var', 'min', and 'max',
+        corresponding to the mean, median, standard deviation, variance, minimum and maximum of the input list, respectively. 
     """
     
     itemsort = sorted(items)
@@ -111,6 +112,22 @@ def five_num_summary(items:list):
 
 ### START FUNCTION
 def date_parser(dates:list):
+    """date_parser(dates:list)
+            
+            Description:
+            ------------
+            This function takes as input a list of these datetime strings and returns only the date in 'yyyy-mm-dd' format. 
+            
+        
+            Parameters:
+            -----------
+            dates (list): list of datetime strings.
+        
+            Return:
+            -------
+            dates (list): list of dates strings.  
+        """
+    
     return [i.split(' ', 1)[0] for i in dates]
 ### END FUNCTION
 # Funtion 4:
