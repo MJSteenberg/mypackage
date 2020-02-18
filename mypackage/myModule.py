@@ -68,8 +68,8 @@ stop_words_dict = {
 # Function 1:
 
 ### START FUNCTION
-def dictionary_of_metrics(items:list):
-    """dictionary_of_metrics(items:list)
+def dictionary_of_metrics(items):
+    """dictionary_of_metrics(items)
     
         Description:
         ------------
@@ -98,8 +98,8 @@ def dictionary_of_metrics(items:list):
 # Function 2:
 
 ### START FUNCTION
-def five_num_summary(items:list):
-        """five_num_summary(items:list)
+def five_num_summary(items):
+        """five_num_summary(items)
             
             Description:
             ------------
@@ -125,8 +125,8 @@ def five_num_summary(items:list):
 # Function 3:
 
 ### START FUNCTION
-def date_parser(dates:list):
-    """date_parser(dates:list)
+def date_parser(dates):
+    """date_parser(dates)
             
             Description:
             ------------
@@ -147,7 +147,7 @@ def date_parser(dates:list):
 # Funtion 4:
 
 ### START FUNCTION
-def extract_municipality_hashtags(df,cities=mun_dict):
+def extract_municipality_hashtags(df):
     contains_email = []
     hashtags = []
     for x in df["Tweets"]:
