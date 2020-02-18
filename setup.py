@@ -10,5 +10,5 @@ setup(
     install_requires=['numpy','pandas'],
     url='https://github.com/MJSteenberg/mypackage',
     author='EDSA Team 9',
-    author_email='mjsteenberg01@icloud.com'
+    author_email='mjsteenberg01@icloud.com', 'jollinda.bells@gmail.com'
 )
