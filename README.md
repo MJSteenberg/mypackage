@@ -8,7 +8,7 @@ python setup.py sdist
 pip install git+https://github.com/MJSteenberg/mypackage
 
 # upgrading this package from Github
-pip install --upgrade+https://github.com/MJSteenberg/mypackage
+pip install --upgrade git+https://github.com/MJSteenberg/mypackage
 
 # usage
 # In your .py file use:
