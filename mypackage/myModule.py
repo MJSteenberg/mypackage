@@ -146,6 +146,21 @@ def date_parser(dates):
 
 ### START FUNCTION
 def extract_municipality_hashtags(df):
+    
+    """
+    Description:
+    ------------
+    This function returns a dataframe that adds a hastag and the municipality mentioned in the tweet
+    
+    Parameters:
+    -----------
+    (municpality, hashtags): a dataframe of municipality (dict) hashtags
+    
+    Return:
+    ------
+    a dataframe of municipality hashtags
+    
+    """
     contains_email = []
     hashtags = []
     for x in df["Tweets"]:
@@ -161,6 +176,20 @@ def extract_municipality_hashtags(df):
 
 ### START FUNCTION
 def number_of_tweets_per_day(df):
+    
+    """
+    Description:
+    ------------
+    This function should take a pandas dataframe as input. 
+    
+    Parameters:
+    -----------
+    (Date, Tweets): a dataframe grouped by day
+    
+    Return:
+    -------
+    It should return a new dataframe, grouped by day, with the number of tweets for that day.
+    """
     df["Date"] = [i.split(' ', 1)[0] for i in df["Date"]]
     a = sorted(list(df["Date"].unique()))
     dictp = {}
@@ -178,6 +207,21 @@ def number_of_tweets_per_day(df):
 
 ### START FUNCTION
 def word_splitter(df):
+    
+    """
+    Description:
+    ------------
+    This function should take a pandas dataframe as an input. 
+    
+    Parameter:
+    ----------
+    (Tweets, Split Tweets): a dataframe containing a column named 'Tweets'
+    
+    Return:
+    -------
+    The function returns 
+    
+    """
     meh = [list(i.lower().split(" ")) for i in df["Tweets"]]
     df["Split Tweets"] = meh
     df['Date'] = [i.split(' ', 1)[0] for i in df["Date"]]
