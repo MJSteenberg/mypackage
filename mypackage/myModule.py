@@ -152,7 +152,7 @@ def extract_municipality_hashtags(df):
     contains_email = []
     hashtags = []
     for x in df["Tweets"]:
-        contains_email.append([cities[i] for i in x.split(' ') if i in cities.keys()])
+        contains_email.append([mun_dict[i] for i in x.split(' ') if i in mun_dict.keys()])
         hashtags.append([i.lower() for i in x.split(' ') if '#' in i])
     contains_email_nan = [i if i else np.nan for i in contains_email]
     hashtags_nan = [i if i else np.nan for i in hashtags]
@@ -190,9 +190,9 @@ def word_splitter(df):
 # Funtion 7:
 
 ### START FUNCTION
-def stop_words_remover(df,stops=stop_words_dict):
+def stop_words_remover(df):
     def hash_me(words):
-        return [i for i in words.lower().split() if i not in stops["stopwords"]]
+        return [i for i in words.lower().split() if i not in stop_words_dict["stopwords"]]
     df["Without Stop Words"] = df["Tweets"].apply(hash_me)
     return df
 ### END FUNCTION
