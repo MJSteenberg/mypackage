@@ -57,9 +57,14 @@ stop_words_dict = {
 def dictionary_of_metrics(items:list):
     """dictionary_of_metrics(items:list)
     
+        Description:
+        ------------
+        This function calculates the mean, median, variance, standard deviation, minimum and maximum
+        of a given list of numeric items. 
+        
         Parameters:
         -----------
-        (list): list of strings.
+        items (list): list of numeric items.
         
         Return:
         -------
@@ -79,6 +84,22 @@ def dictionary_of_metrics(items:list):
 
 ### START FUNCTION
 def five_num_summary(items:list):
+        """five_num_summary(items:list)
+            
+            Description:
+            ------------
+            This function calculates the five number summary from a given list of float or integers 
+            and returns a dictionary five number summary.
+        
+            Parameters:
+            -----------
+            items (list): list of float / integers.
+        
+            Return:
+            -------
+            (dict): It returns a dictionary of the five number summary --> Q1, Q3,median, min , and max.  
+        """
+        
     sorteditems = sorted(items)
     return {'max': sorteditems[-1],
             'median': round(np.median(items),2) ,
