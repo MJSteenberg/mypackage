@@ -1,4 +1,7 @@
 import mypackage.myModule as mm
+
+# To test that our functions work, use these example tests for every function using the data provided.
+
 import pandas as pd
 import numpy as np
 ebp_url = 'https://raw.githubusercontent.com/Explore-AI/Public-Data/master/Data/electrification_by_province.csv'
