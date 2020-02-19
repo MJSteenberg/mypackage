@@ -68,19 +68,19 @@ stop_words_dict = {
 def dictionary_of_metrics(items):
     """dictionary_of_metrics(items)
     
-        Description:
-        ------------
-        This function calculates the mean, median, variance, standard deviation, minimum and maximum
-        of a given list of numeric items. 
+    Description:
+    ------------
+    This function calculates the mean, median, variance, standard deviation, minimum and maximum
+    of a given list of numeric items. 
         
-        Parameters:
-        -----------
-        items (list): list of numeric items.
+     Parameters:
+     -----------
+     items (list): list of numeric items.
         
-        Return:
-        -------
-        (dict): the function return a dict with keys 'mean', 'median', 'std', 'var', 'min', and 'max',
-        corresponding to the mean, median, standard deviation, variance, minimum and maximum of the input list, respectively. 
+     Return:
+     -------
+     (dict): the function return a dict with keys 'mean', 'median', 'std', 'var', 'min', and 'max',
+      corresponding to the mean, median, standard deviation, variance, minimum and maximum of the input list, respectively. 
     """
     
     itemsort = sorted(items)
@@ -97,21 +97,20 @@ def dictionary_of_metrics(items):
 ### START FUNCTION
 def five_num_summary(items):
     
-    
     """five_num_summary(items)
             
-            Description:
-            ------------
-            This function calculates the five number summary from a given list of float or integers 
-            and returns a dictionary five number summary.
+    Description:
+    ------------
+    This function calculates the five number summary from a given list of float or integers 
+    and returns a dictionary five number summary.
         
-            Parameters:
-            -----------
-            items (list): list of float / integers.
+    Parameters:
+    -----------
+    items (list): list of float / integers.
         
-            Return:
-            -------
-            (dict): It returns a dictionary of the five number summary --> Q1, Q3,median, min , and max.  
+    Return:
+    -------
+    (dict): It returns a dictionary of the five number summary --> Q1, Q3,median, min , and max.  
     """
     sorteditems = sorted(items)
     return {'max': sorteditems[-1],
@@ -124,21 +123,21 @@ def five_num_summary(items):
 
 ### START FUNCTION
 def date_parser(dates):
+    
     """date_parser(dates)
             
-            Description:
-            ------------
-            This function takes as input a list of these datetime strings and returns only the date in 'yyyy-mm-dd' format. 
-            
+    Description:
+    ------------
+    This function takes as input a list of these datetime strings and returns only the date in 'yyyy-mm-dd' format. 
+           
+    Parameters:
+    -----------
+    dates (list): list of datetime strings.
         
-            Parameters:
-            -----------
-            dates (list): list of datetime strings.
-        
-            Return:
-            -------
-            dates (list): list of dates strings.  
-        """
+    Return:
+    -------
+    dates (list): list of dates strings.  
+    """
     
     return [i.split(' ', 1)[0] for i in dates]
 ### END FUNCTION
@@ -180,7 +179,7 @@ def number_of_tweets_per_day(df):
     """
     Description:
     ------------
-    This function should take a pandas dataframe as input. 
+    This function takes a pandas dataframe as input and returns a modified dataframe with the number of tweets for that day.
     
     Parameters:
     -----------
@@ -188,8 +187,9 @@ def number_of_tweets_per_day(df):
     
     Return:
     -------
-    It should return a new dataframe, grouped by day, with the number of tweets for that day.
+    new dataframe, grouped by day, with the number of tweets for that day.
     """
+    
     df["Date"] = [i.split(' ', 1)[0] for i in df["Date"]]
     a = sorted(list(df["Date"].unique()))
     dictp = {}
@@ -203,6 +203,7 @@ def number_of_tweets_per_day(df):
     new_df.index.name = "Date"
     return new_df
 ### END FUNCTION
+
 # Funtion 6:
 
 ### START FUNCTION
@@ -211,7 +212,7 @@ def word_splitter(df):
     """
     Description:
     ------------
-    This function should take a pandas dataframe as an input. 
+    This function takes a pandas dataframe as an input and splits Tweets into a list, stored in a new column.
     
     Parameter:
     ----------
@@ -219,7 +220,7 @@ def word_splitter(df):
     
     Return:
     -------
-    The function returns 
+    a modified dataframe with a new column including a list of words.
     
     """
     meh = [list(i.lower().split(" ")) for i in df["Tweets"]]
@@ -228,10 +229,27 @@ def word_splitter(df):
     df['Tweets'] = [i.lower() for i in df["Tweets"]]
     return df
 ### END FUNCTION
+
 # Funtion 7:
 
 ### START FUNCTION
 def stop_words_remover(df):
+    
+    """
+    Description:
+    ------------
+    This function takes a pandas dataframe as an input and modifies the 
+    dataframe by removing all stop words from the predefined dictionary. 
+    
+    Parameter:
+    ----------
+    (stop_words_dict, "Without Stop Words"): a dataframe with words from a predefined dictionary removed.
+    
+    Return:
+    -------
+    a modified dataframe with stop words removed.
+    
+    """
     def hash_me(words):
         return [i for i in words.lower().split() if i not in stop_words_dict["stopwords"]]
     df["Without Stop Words"] = df["Tweets"].apply(hash_me)
